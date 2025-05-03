@@ -1,1 +1,2 @@
-# skello-case-study
+# 💼  Case Study - Julien CHARLET
+## 💬  Intercom conversations
