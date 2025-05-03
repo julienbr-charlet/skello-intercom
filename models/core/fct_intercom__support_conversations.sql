@@ -12,9 +12,9 @@ dim_team AS (
 
 SELECT
 
-c.*,
-m.*,
-t.assignee_name
+  c.*,
+  t.assignee_name,
+  m.*
 
 FROM stg_intercom__conversations c
 
