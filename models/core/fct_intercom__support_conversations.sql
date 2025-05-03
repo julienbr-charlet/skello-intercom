@@ -13,7 +13,7 @@ dim_team AS (
 SELECT
 
   c.*,
-  t.assignee_name,
+  t.assignee_name AS conversion_assignee_name,
   m.*
 
 FROM stg_intercom__conversations c
