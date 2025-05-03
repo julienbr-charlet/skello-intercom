@@ -1,1 +1,58 @@
+version: 2
 
+sources:
+  - name: intercom
+    tables:
+      - name: conversations
+        description: "Conversations brutes issues de l'outil Intercom"
+        columns:
+          - name: id
+            description: "Identifiant unique de la conversation"
+            tests:
+              - not_null
+              - unique
+      - name: conversation_parts
+        description: "Actions et messages associés à chaque conversation"
+        columns:
+          - name: id
+            description: "ID de l'action"
+            tests:
+              - not_null
+              - unique
+
+models:
+  - name: stg_intercom__conversations
+    description: "Staging : nettoyage et renommage des colonnes de la table conversations"
+    columns:
+      - name: conversation_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_intercom__conversation_parts
+    description: "Staging : nettoyage et renommage de la table conversation_parts"
+    columns:
+      - name: conversation_part_id
+        tests:
+          - not_null
+          - unique
+
+  - name: int_intercom__messages
+    description: "Analyse des messages conversationnels (hors bot, group Message uniquement) au niveau de la conversation associée"
+    columns:
+      - name: conversation_part_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_team
+    description: "Dimension contenant le mapping des agents Skello"
+
+  - name: fct_intercom__support_conversations
+    description: "Core : permet l'analyse des conversations et messages conversationnels associés à l'équipe Support"
+    columns:
+      - name: conversation_id
+        tests:
+          - not_null
+          - unique
+  
