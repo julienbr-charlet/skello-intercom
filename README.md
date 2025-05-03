@@ -23,23 +23,39 @@ Commençons !
 
 ### Modélisation de la donnée
 #### ▶ Les tables de staging
-> *stg_intercom__conversations*
+> *stg_intercom__conversations*<br />
 > *stg_intercom__conversation_parts*
 
-<br />
+- Renommage des champs pour expliciter l'origine (conversation ou conversation_part) et ainsi éviter les confusions dans les futures jointures
+- Extraction de champs dans les colonnes de type JSON
+- Création de champs de date "_on" en addition des champs "_at" en prévision de futures analyses
+- Création de flags (ie. *is_csat_rated*) en prévision du calcul de KPIs
+- Organisation des champs pour une meilleure appréhension de la table (via la catégorisation en commentaires)
+- Ajout de la commande DISTINCT pour supprimer les doublons identifiés lors de l'appréhension des fichiers
 
 #### ▶ La table intermédiaire
 > *int_intercom__messages*
 
-<br />
+- Agrégation de la staging *stg_intercom__conversation_parts* au niveau conversation_id afin de calculer des KPIs liés aux conversations, utilisables dans l'analyse
+- Filtrage de la donnée pour ne garder que les "Messages" et exclure les "bots"
+- Identification d'évènements (date du premier message, date de la première réponse)
+- Création de calculs (nombre de messages, time to answer)
+- Création de flags/info (jour et période de journée de la création du premier message, SLA) en prévision des analyses
 
 #### ▶ La table de dimension
 > *dim_team*
 
-<br />
+- Création d'une table de mapping facilement actionnable dans le but de relier les assignees à leur team
 
 #### ▶ La table core
-> *fct_intercom__*
+> *fct_intercom__support_conversations*
+
+- Permet l'analyse au niveau conversation de l'équipe Support rendant faciles les futures agrégations dans un dashboard
+- Jointure des tables *stg_intercom__conversations*, *int_intercom__messages* et *dim_team*
+- Filtrage de la donnée pour ne garder que les conversations assignées à l'équipe Support
+
+<br />
+
 
 ### Création du template du dashboard
 
