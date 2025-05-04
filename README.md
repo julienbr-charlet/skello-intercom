@@ -27,7 +27,8 @@ Commençons !
 > *stg_intercom__conversation_parts*
 
 - Renommage des champs pour expliciter l'origine (conversation ou conversation_part) et ainsi éviter les confusions dans les futures jointures
-- Extraction de champs dans les colonnes de type JSON
+- Nettoyage du champ assigned_to de conversation_parts pour transformation en JSON (remplacement de None en null et des apostrophes en guillemets)
+- Extraction de champs dans les colonnes de type JSON (en direct ou en aplatissant des champs à plusieurs niveaux)
 - Création de champs de date "_on" en addition des champs "_at" en prévision de futures analyses
 - Création de flags (ie. *is_csat_rated*) en prévision du calcul de KPIs
 - Organisation des champs pour une meilleure appréhension de la table (via la catégorisation en commentaires)
@@ -53,6 +54,10 @@ Commençons !
 - Permet l'analyse au niveau conversation de l'équipe Support rendant faciles les futures agrégations dans un dashboard
 - Jointure des tables *stg_intercom__conversations*, *int_intercom__messages* et *dim_team*
 - Filtrage de la donnée pour ne garder que les conversations assignées à l'équipe Support
+
+#### ▶ Configuration
+
+- Tests sur les clés primaires (conversation_id et conversation_part_id) pour vérifier le remplissage et l'unicité des champs
 
 <br />
 
