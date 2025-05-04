@@ -71,14 +71,21 @@ Commençons !
 
 ### Création du template du dashboard
 
-#### ▶ Vue d'ensemble
-<img width="566" alt="image" src="https://github.com/user-attachments/assets/9e7f118f-943b-4089-bb3b-6f53a678d084" /> 
+Le modèle présenté à Lorette est le suivant : 
+</br>
 
-<br />
-
-#### ▶ Vue explicative
 <img width="1081" alt="image" src="https://github.com/user-attachments/assets/39393dbc-e676-43ec-af83-6b1ec12b9993" />
 
 <br />
+- L'idée derrière ce modèle de dashboard est de fournir à Lorette un outil non seulement de reporting (extraction de chiffres de manière simple) mais également un outil d'analyse qui lui permette de donner de la profondeur à son analyse hebdomadaire.
+
+<br />
+- Avec un filtre sur la date de création des conversations par défaut sur la semaine précédente, Lorette a accès directement à la performance qui l'intéresse
+- On organise le dashboard avec une partie KPIs et une partie Busyness (cette seconde partie ne pouvant s'analyser comme la première)
+- Les KPIs seront construits sous forme de triptyques : valeur, breakdown, évolution temporelle (+ breakdown)
+1. Le paramètre BREAKDOWN permet à Lorette de comparer la performance d'un même KPI d'une dimension choisie
+2. Le paramètre GRANULARITY permet à Lorette de choisir la granularité de dates : par défaut en jour pour son analyse hebdo, mais possible de regarder par semaine, mois, quarter..
+  
+
 
 ### Création du dashboard
