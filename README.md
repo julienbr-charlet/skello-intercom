@@ -76,6 +76,7 @@ Le modèle présenté à Lorette est le suivant :
 
 <img width="1081" alt="image" src="https://github.com/user-attachments/assets/39393dbc-e676-43ec-af83-6b1ec12b9993" />
 
+
 <br />
 
 - L'idée derrière ce modèle de dashboard est de fournir à Lorette un outil non seulement de reporting (extraction de chiffres de manière simple) mais également un outil d'analyse qui lui permette de donner de la profondeur à son analyse hebdomadaire.
@@ -91,14 +92,19 @@ Le modèle présenté à Lorette est le suivant :
 
 <br />
 
+Afin de valider le listing de KPIs, il faudra discuter avec Lorette :
+- du type de décisions prises lors de ce meeting hebdomadaire
+- 
+
 Certaines notions seront à éclaircir :
 - Au-delà du nombre de conversations dont le time to answer est inférieur à 5 minutes, le temps moyen est-il intéressant ?
 - Y aurait-il un intérêt à créer un palier de CSAT ? (par exemple pour analyser le nombre de conversations dont la CSAT est inférieure à 3 ?)
 - La CSAT moyenne devrait s'étudier en miroir du taux de réponse
 - Comment se calcule le time to close ? (date du dernier message admin ? date d'update de la conversation si state = 'closed' ?)
 - Pourrait-on imaginer un regroupement des tags pour une meilleure lisibilité de l'info ?
+- Comment gérer les plages horaires des membres de l'équipe dans le calcul des délais de réponse/close ?
 
-On pourrait également proposer à Lorette une analyse de la donnée qualitative reccueillie dans la CSAT (via un algorithme de machine learning).
+On pourrait également proposer à Lorette une analyse de verbatims reccueillis avec la CSAT (via l'équipe Data Science notamment)
 
 <br />
 
