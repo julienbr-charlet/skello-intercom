@@ -1,5 +1,5 @@
-WITH stg_intercom__conversations AS (
-  SELECT * FROM {{ ref('stg_intercom__conversations') }}
+WITH int_intercom__agg_conversations AS (
+  SELECT * FROM {{ ref('int_intercom__agg_conversations') }}
 ),
 
 int_intercom__messages AS (
@@ -17,7 +17,7 @@ SELECT
   t.assignee_name AS conversion_assignee_name,
   m.*
 
-FROM stg_intercom__conversations c
+FROM int_intercom__agg_conversations c
 
 INNER JOIN int_intercom__messages m USING (conversation_id)
 LEFT JOIN dim_team t ON c.conversation_assignee_id = t.assignee_id
