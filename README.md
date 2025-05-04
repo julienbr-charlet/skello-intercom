@@ -32,9 +32,8 @@ Commençons !
 - Création de champs de date "_on" en addition des champs "_at" en prévision de futures analyses
 - Création de flags (ie. *is_csat_rated*) en prévision du calcul de KPIs
 - Organisation des champs pour une meilleure appréhension de la table (via la catégorisation en commentaires)
-- Ajout de la commande DISTINCT pour supprimer les doublons identifiés lors de l'appréhension des fichiers
 
-#### ▶ La table intermédiaire
+#### ▶ Les tables intermédiaires
 > *int_intercom__messages*
 
 - Agrégation de la staging *stg_intercom__conversation_parts* au niveau conversation_id afin de calculer des KPIs liés aux conversations, utilisables dans l'analyse
@@ -42,6 +41,14 @@ Commençons !
 - Identification d'évènements (date du premier message, date de la première réponse)
 - Création de calculs (nombre de messages, time to answer)
 - Création de flags/info (jour et période de journée de la création du premier message, SLA) en prévision des analyses
+
+> *int_intercom__agg_conversations*
+- Agrégation de la staging *stg_intercom__conversations* au niveau conversation_id en supprimant les infos de tags mais en agrégeant le nom des tags à des fins d'analyse
+- Cette agrégation permet de conserver le champ conversation_id comme clé primaire dans la table core
+
+> *int_intercom__conversations_tags*
+- Agrégation de la staging *stg_intercom__conversations* au niveau conversation_id en ne conservant uniquement les infos de tags
+- Cette table pourra être appelée par exemple dans un Explore dans Looker ou via une Relation dans Tableau pour permettre une analyse plus fine des tags, sans dédupliquer les lignes en utilisant la donnée lié aux conversations
 
 #### ▶ La table de dimension
 > *dim_team*
@@ -52,7 +59,7 @@ Commençons !
 > *fct_intercom__support_conversations*
 
 - Permet l'analyse au niveau conversation de l'équipe Support rendant faciles les futures agrégations dans un dashboard
-- Jointure des tables *stg_intercom__conversations*, *int_intercom__messages* et *dim_team*
+- Jointure des tables *int_intercom__agg_conversations*, *int_intercom__messages* et *dim_team*
 - Filtrage de la donnée pour ne garder que les conversations assignées à l'équipe Support
 
 #### ▶ Configuration
