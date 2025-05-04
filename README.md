@@ -77,15 +77,33 @@ Le modèle présenté à Lorette est le suivant :
 <img width="1081" alt="image" src="https://github.com/user-attachments/assets/39393dbc-e676-43ec-af83-6b1ec12b9993" />
 
 <br />
+
 - L'idée derrière ce modèle de dashboard est de fournir à Lorette un outil non seulement de reporting (extraction de chiffres de manière simple) mais également un outil d'analyse qui lui permette de donner de la profondeur à son analyse hebdomadaire.
 
 <br />
+
 - Avec un filtre sur la date de création des conversations par défaut sur la semaine précédente, Lorette a accès directement à la performance qui l'intéresse
-- On organise le dashboard avec une partie KPIs et une partie Busyness (cette seconde partie ne pouvant s'analyser comme la première)
+- On organise le dashboard avec une partie KPIs et une partie Busyness
 - Les KPIs seront construits sous forme de triptyques : valeur, breakdown, évolution temporelle (+ breakdown)
-1. Le paramètre BREAKDOWN permet à Lorette de comparer la performance d'un même KPI d'une dimension choisie
-2. Le paramètre GRANULARITY permet à Lorette de choisir la granularité de dates : par défaut en jour pour son analyse hebdo, mais possible de regarder par semaine, mois, quarter..
   
+1. Le paramètre BREAKDOWN permet à Lorette de comparer la performance d'un même KPI d'une dimension choisie
+2. Le paramètre GRANULARITY permet à Lorette de choisir la granularité de dates : par défaut en jour pour son analyse hebdo, mais possible de regarder par semaine, mois, trimestre ou année
+
+<br />
+
+Certaines notions seront à éclaircir :
+- Au-delà du nombre de conversations dont le time to answer est inférieur à 5 minutes, le temps moyen est-il intéressant ?
+- Y aurait-il un intérêt à créer un palier de CSAT ? (par exemple pour analyser le nombre de conversations dont la CSAT est inférieure à 3 ?)
+- La CSAT moyenne devrait s'étudier en miroir du taux de réponse
+- Comment se calcule le time to close ? (date du dernier message admin ? date d'update de la conversation si state = 'closed' ?)
+- Pourrait-on imaginer un regroupement des tags pour une meilleure lisibilité de l'info ?
+
+On pourrait également proposer à Lorette une analyse de la donnée qualitative reccueillie dans la CSAT (via un algorithme de machine learning).
+
+<br />
 
 
 ### Création du dashboard
+
+<img width="1358" alt="image" src="https://github.com/user-attachments/assets/128b2b19-2eb5-4718-9273-fdc7cfecb035" />
+
