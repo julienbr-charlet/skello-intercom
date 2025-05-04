@@ -15,7 +15,7 @@ Commençons !
 4. Travail des requêtes de modélisation dans la UI pour visualisation des résultats en direct
 5. Création d'un projet GitHub, de l'arborescence et des fichiers du projet dbt puis intégration des requêtes
 6. Création du template du dashboard sur Miro
-7. Création du dashboard sur XXX
+7. Création du dashboard sur Tableau
 
 <br />
 
