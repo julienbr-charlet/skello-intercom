@@ -64,6 +64,11 @@ Commençons !
 
 ### Création du template du dashboard
 
+<img width="566" alt="image" src="https://github.com/user-attachments/assets/9e7f118f-943b-4089-bb3b-6f53a678d084" />
+<img width="1081" alt="image" src="https://github.com/user-attachments/assets/39393dbc-e676-43ec-af83-6b1ec12b9993" />
+
+
+
 <br />
 
 ### Création du dashboard
