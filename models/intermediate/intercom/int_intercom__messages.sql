@@ -26,7 +26,10 @@ SELECT
   --TIME TO ANSWER
   MIN(CASE WHEN conversation_part_author_type = 'admin' THEN conversation_part_created_at END) AS first_answer_created_at,
   DATEDIFF('minute',first_message_created_at,first_answer_created_at) AS time_to_answer_minutes,
-  CASE WHEN time_to_answer_minutes <=5 THEN true ELSE false END AS sla_time_to_answer_met
+  CASE WHEN time_to_answer_minutes <=5 THEN true ELSE false END AS sla_time_to_answer_met,
+
+  --LAST ANSWER
+  MAX(conversation_part_created_at) AS last_answer_created_at
 
 FROM stg_intercom__conversation_parts
 
