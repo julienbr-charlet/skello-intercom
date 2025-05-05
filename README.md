@@ -76,10 +76,11 @@ Le modèle présenté à Lorette est le suivant :
 
 <img width="1081" alt="image" src="https://github.com/user-attachments/assets/39393dbc-e676-43ec-af83-6b1ec12b9993" />
 
-
+<br />
 <br />
 
 - L'idée derrière ce modèle de dashboard est de fournir à Lorette un outil non seulement de reporting (extraction de chiffres de manière simple) mais également un outil d'analyse qui lui permette de donner de la profondeur à son analyse hebdomadaire.
+- Ce modèle permet également de réduire la taille du dashboard en évitant la multiplication des graphiques : ici, un même graphique lié à un seul KPI peut permettre une analyse en profondeur !
 
 <br />
 
@@ -94,7 +95,7 @@ Le modèle présenté à Lorette est le suivant :
 
 Afin de valider le listing de KPIs, il faudra discuter avec Lorette :
 - du type de décisions prises lors de ce meeting hebdomadaire
-- 
+- des incentives de l'équipe : en fonction, il se pourrait qu'on dédie un focus particulier à certains KPIs
 
 Certaines notions seront à éclaircir :
 - Au-delà du nombre de conversations dont le time to answer est inférieur à 5 minutes, le temps moyen est-il intéressant ?
@@ -111,5 +112,21 @@ On pourrait également proposer à Lorette une analyse de verbatims reccueillis 
 
 ### Création du dashboard
 
+Le modèle développé sur Tableau est le suivant.
+Voici quelques exemples de ce qu'il permet de voir :
+
+> Vision Assignee <br />
+> Raphaël a traité beaucoup moins de conversations qu'Héloïse mais avec un temps moyen de première réponse beaucoup plus long.
+<br />
 <img width="1358" alt="image" src="https://github.com/user-attachments/assets/128b2b19-2eb5-4718-9273-fdc7cfecb035" />
+
+<br />
+<br />
+
+> Vision Tags / Priority <br />
+> Il y a eu cette semaine 74 conversations prioritaires, majoritairement en rapport avec le tag "Permissions". <br />
+<br />
+
+<img width="1352" alt="image" src="https://github.com/user-attachments/assets/bfd68452-ab87-4887-9f3f-3b2480d98237" />
+
 
