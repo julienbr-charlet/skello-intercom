@@ -112,7 +112,9 @@ On pourrait également proposer à Lorette une analyse de verbatims reccueillis 
 
 ### Création du dashboard
 
-Le modèle développé sur Tableau est le suivant.
+Le modèle développé sur Tableau est le suivant. <br />
+Je serai ravi de vous faire une démo en live de son utilisation ! <br />
+<br />
 Voici quelques exemples de ce qu'il permet de voir :
 
 > Vision Assignee <br />
